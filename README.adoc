@@ -5,3 +5,10 @@ image:https://ci.gravitee.io/buildStatus/icon?job=gravitee-io/gravitee-fetcher-h
 image:https://badges.gitter.im/Join Chat.svg["Gitter", link="https://gitter.im/gravitee-io/gravitee-io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"]
 endif::[]
 
+
+== Description
+
+This plugin allow Gravitee.io to fetch content from an URL.
+It's primarily used to fetch documentation.
+
+**Authentications is currently not supported**.
