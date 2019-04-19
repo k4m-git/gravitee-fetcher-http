@@ -48,7 +48,7 @@ public class HttpFetcherTest {
                         .withBody("Gravitee.io is awesome!")));
 
         HttpFetcherConfiguration httpFetcherConfiguration = new HttpFetcherConfiguration();
-        httpFetcherConfiguration.setUrl("http://localhost:" + wireMockRule.port() + "/resource/to/fetch");
+        httpFetcherConfiguration.setUrl(wireMockRule.baseUrl() + "/resource/to/fetch");
         HttpFetcher httpFetcher = new HttpFetcher(httpFetcherConfiguration);
         ReflectionTestUtils.setField(httpFetcher, "httpClientTimeout", 1_000);
         httpFetcher.setVertx(Vertx.vertx());
@@ -71,7 +71,7 @@ public class HttpFetcherTest {
                 .willReturn(aResponse()
                         .withStatus(404)));
         HttpFetcherConfiguration httpFetcherConfiguration = new HttpFetcherConfiguration();
-        httpFetcherConfiguration.setUrl("http://localhost:" + wireMockRule.port() + "/resource/to/fetch");
+        httpFetcherConfiguration.setUrl(wireMockRule.baseUrl() + "/resource/to/fetch");
         HttpFetcher httpFetcher = new HttpFetcher(httpFetcherConfiguration);
         httpFetcher.setVertx(Vertx.vertx());
         InputStream is = null;
